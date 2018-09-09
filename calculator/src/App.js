@@ -28,16 +28,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>hi i am class component</h1>
-        <div >
-            <InputBox class="input1" number="Number1" placeholder="Number1" value={this.state.number1}></InputBox>
-            <br/>
-        </div>
-        <div>
-            <InputBox class="input1" number="Number1" value={this.state.number2}></InputBox>
-        </div>
+        <h1>hi i am calculator component</h1>
         <br/>
-        <InputBox number="Total  " value={this.state.number3}></InputBox> 
+        <table>
+            <tr>
+              <td> <InputBox class="input1" number="Number1" placeholder="Number1" value={this.state.number1}></InputBox></td>
+              <td> <InputBox class="input1" number="Number2" placeholder="Number2" value={this.state.number2}></InputBox></td>
+            </tr>
+            <br/>
+            <tr>
+              <td colSpan="2"> <InputBox number="Total  " value={this.state.number3}></InputBox> </td>
+              </tr>
+         </table>
+         
         <br/>
         <div  class="container">
             <NewButton value={this.state.row}  ></NewButton>
