@@ -2,10 +2,28 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+FirstTextBox{
+  width: 100px;
+
 }
+
+leftcontainer{
+  background-color: aqua;
+}
+
+input1{
+  width: 150px;
+}
+
+button {
+  width: 75px;
+}
+
+table{
+  margin: 0 auto; 
+  width: 35%;
+}
+
 
 .App-header {
   background-color: #222;
