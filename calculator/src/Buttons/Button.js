@@ -9,18 +9,9 @@ const NewButton = (props) =>{
              <table>
                  <tr>
                  <td>
-                <button >{props.value[0]}</button>
+                <button onClick={props.onclick}>{props.value} </button>
                </td>
-               <td> 
-                <button >{props.value[1]}</button>
-              </td>
-              <td> 
-                <button >{props.value[2]}</button>
-              </td>
-              <td> 
-                <button >{props.value[3]}</button>
-              </td>
-                 </tr>    
+               </tr>
               </table>      
           </div>      
 

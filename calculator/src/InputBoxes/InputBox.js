@@ -5,7 +5,7 @@ const InputBox = (props) =>{
     return(
         <div>
             <label for={props.number}>{props.number}</label>
-            <input  class="number" type="text" placeholderText={props.placeholder} value={props.value}></input>
+            <input  class="number" type="text" placeholderText={props.placeholder} value={props.value} onChange={props.change}></input>
         </div>    
     )
 }
