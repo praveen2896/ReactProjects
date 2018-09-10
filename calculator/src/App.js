@@ -17,7 +17,9 @@ class App extends Component {
       placeholder:"enter your number",
       number1:"",
       number2:"",
-      number3:0
+      number3:0,
+      temp1:0,
+      temp2:0
     }  
 
     this.handleChange=this.handleChange.bind(this)
@@ -61,6 +63,69 @@ class App extends Component {
       number3:0
    })
   }
+
+  subtract = () =>
+  {
+    if(this.state.number1 && this.state.number2)
+    {
+        this.setState({
+           number3:Number(this.state.number1)-Number(this.state.number2)
+        })
+    }
+    else{
+      alert("please fill all the fields")
+    } 
+  }
+
+  multiply = () =>
+  {
+    if(this.state.number1 && this.state.number2)
+    {
+        this.setState({
+           number3:Number(this.state.number1)*Number(this.state.number2)
+        })
+    }
+    else{
+      alert("please fill all the fields")
+    } 
+  }
+
+  divide = () =>
+  {
+    
+    if(this.state.number1 && this.state.number2)
+    {
+        this.setState({
+           number3:Number(this.state.number1)/Number(this.state.number2)
+        })
+    }
+    else{
+      alert("please fill all the fields")
+    } 
+  }
+
+  square = () =>
+  {
+    if(this.state.number1 && !this.state.number2)
+    { 
+      this.setState({
+          number3:Number(this.state.number1)*Number(this.state.number1)
+      })
+    }
+    else if(this.state.number2 && !this.state.number1)
+    {
+      this.setState({
+        number3:Number(this.state.number2)*Number(this.state.number2)
+      })
+    }
+    else{
+      this.setState({
+        temp1:''+Number(this.state.number1)*Number(this.state.number1),
+        temp2:''+Number(this.state.number2)*Number(this.state.number2),
+        number3:this.state.temp1+'/'+this.state.temp2
+      })
+    }
+  }
   
   render() {
     return (
@@ -70,8 +135,8 @@ class App extends Component {
     
         <table >
             <tr>
-              <td> <InputBox class="input1" number="Number1" placeholder="Number1" value={this.state.number1}  change={this.handleChange}></InputBox></td>
-              <td> <InputBox class="input1" number="Number2" placeholder="Number2" value={this.state.number2}  change={this.handle2Change}></InputBox></td>
+              <td> <InputBox className="input1" number="Number1" placeholder="Number1" value={this.state.number1}  change={this.handleChange}></InputBox></td>
+              <td> <InputBox className="input1" number="Number2" placeholder="Number2" value={this.state.number2}  change={this.handle2Change}></InputBox></td>
             </tr>
             <br/>
             <tr>
@@ -80,7 +145,7 @@ class App extends Component {
          </table>
          
         <br/>
-        <div  class="container" >
+        <div  className="container" >
         <table>
           <tbody>
           <tr>
